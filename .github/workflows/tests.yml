@@ -26,3 +26,5 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Test the JXA bridge with a fake Things app
         run: node --test tests/test_bridge.cjs
+      - name: Validate and build the plugin ZIP
+        run: python3 scripts/package_plugin.py --check --output-dir dist

@@ -13,6 +13,16 @@ node --test tests/test_bridge.cjs
 
 The Python suite checks validation and the command-line boundary. The JavaScript suite evaluates the JXA bridge against a fake Things application, checking behavior without Automation permission or a Things installation. Both run in CI.
 
+The root `SKILL.md`, `agents/openai.yaml`, and runtime scripts are the authoritative standalone skill. The installable plugin contains generated copies under `plugins/things/skills/things/`; do not edit those copies directly. After changing the standalone skill, license, or privacy text, sync and validate the package:
+
+```sh
+python3 scripts/package_plugin.py --sync --check
+python3 -m unittest discover -s tests -v
+python3 scripts/package_plugin.py --output-dir dist
+```
+
+The onboarding skill, manifest, icon, and plugin README are edited directly under `plugins/things/`. Tests reject stale generated copies and check that the release archive runs after extraction. The ZIP uses an explicit file list and reproducible metadata, excluding Git history, caches, and local files. See [PUBLISHING.md](PUBLISHING.md) for distribution.
+
 On macOS, check JXA syntax without executing the script:
 
 ```sh

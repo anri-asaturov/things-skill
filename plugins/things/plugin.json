@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "things-macos",
+  "version": "0.1.0",
+  "description": "Read and manage Things 3 tasks and projects on a local Mac through its public scripting interface.",
+  "author": {
+    "name": "Anri Asaturov",
+    "url": "https://github.com/anri-asaturov"
+  },
+  "homepage": "https://github.com/anri-asaturov/things-skill",
+  "repository": "https://github.com/anri-asaturov/things-skill",
+  "license": "MIT",
+  "keywords": ["things", "macos", "tasks", "productivity", "agent-skills"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Things for macOS",
+        "shortDescription": "Plan and manage Things tasks",
+        "longDescription": "Review your inbox, plan your day, find tasks, and organize Things 3 projects. Create and edit tasks, schedule start dates and deadlines, and complete items you choose. Includes guided setup, read-only write previews, concurrent-edit checks, and verification after changes. Requires execution on a Mac with Things 3, Python 3.10 or later, and macOS Automation permission. Cloud-only environments cannot reach your local Things app. Uses Things' public scripting interface, with no Things Cloud credentials or direct database access. Task data returned to your AI assistant is subject to that assistant's data handling. Independent community project; not affiliated with Cultured Code or OpenAI.",
+        "developerName": "Anri Asaturov",
+        "category": "Productivity",
+        "capabilities": ["Read tasks and projects", "Create and edit tasks", "Schedule and complete items"],
+        "websiteURL": "https://github.com/anri-asaturov/things-skill",
+        "supportURL": "https://github.com/anri-asaturov/things-skill/issues",
+        "privacyPolicyURL": "https://github.com/anri-asaturov/things-skill/blob/main/PRIVACY.md",
+        "defaultPrompt": [
+          "Set up Things on this Mac and verify the connection.",
+          "Review my Things Today list and help me plan my day.",
+          "Help me sort my Things inbox into projects."
+        ],
+        "brandColor": "#0D6862",
+        "brandColorDark": "#6DDBBD",
+        "composerIcon": "./assets/icon.svg",
+        "logo": "./assets/icon.svg"
+      },
+      "onboardingSkill": "./skills/things-setup/SKILL.md",
+      "publication": {
+        "release_notes": "Initial plugin release with the Things skill, guided prerequisite and connection checks, and a GitHub marketplace. macOS only."
+      }
+    }
+  }
+}

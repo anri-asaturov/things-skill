@@ -1,0 +1,20 @@
+{
+  "name": "things-skill",
+  "interface": {
+    "displayName": "Things skill"
+  },
+  "plugins": [
+    {
+      "name": "things-macos",
+      "source": {
+        "source": "local",
+        "path": "./plugins/things"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

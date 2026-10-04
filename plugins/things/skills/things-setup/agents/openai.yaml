@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set up Things"
+  short_description: "Check this Mac and connect to Things"
+  default_prompt: "Use $things-setup to verify this Mac can connect to Things."
