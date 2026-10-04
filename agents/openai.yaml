@@ -1,0 +1,4 @@
+interface:
+  display_name: "Things"
+  short_description: "Read and manage Things tasks on your Mac"
+  default_prompt: "Use $things to review my Today list and help me plan my day."
